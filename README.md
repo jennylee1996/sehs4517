@@ -1,34 +1,23 @@
-<h1 style="color:blue">Hospital Mangment System Made with Laravel 8</h1>
-<h3>Front End</h3>
+<h1 style="color:blue">SEHS4517</h1>
 
-<img src="FrontEnd.png" />
 
-<h3>Back End</h3>
-
-<img src="admin-screenshot.png" />
-
-<h3>Database Tables</h3>
-
-<img src="Tables_Screenshot.png" />
-
-<h2 style="color:cyan">Installation</h2>
+<h2 style="color:cyan">Info</h2>
 <ul>
+    <li>1. Download PhpStorm 2023.2.3 > Active account (student free)</li>
+    <li>2. download xampp and setup xampp</li>
+    <li>3. download git > https://git-scm.com/downloads</li>
     <li>Clone the Repo: <br> </li>
-    <li style=""> > git clone https://github.com/tauseedzaman/hospitalMS.git</li>
-    <li> > cd hospitalMS</li>
-    <li> > composer install or composer update</li>
+    <li style=""> > git clone git@github.com:jennylee1996/sehs4517.git</li>
+    <li> > cd sehs4517</li>
+    <li> > composer install</li>
     <li> > cp .env.example .env</li>
     <li> > Set up .env file</li>
     <li> > php artisan key:generate</li>
-    <li> > php artisan storage:link</li>
-    <li> > php artisan migrate:fresh --seed</li>
     <li> > php artisan serve</li>
     <li> <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> </li>
-    </ul>
-    <p style="color:yellow">If you like our project please leave a star ❤<p>
+    <li>4. PhpStorm open project</li>
+    <li>5. Change branch to development</li>
+</ul>
 
-
-`
-    [For Online Demo Click Me](https://hospital-management-system.tauseedzaman.com)
 
 
