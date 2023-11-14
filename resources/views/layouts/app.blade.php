@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" {{ $app = App\Models\general_settings::latest()->first() }}>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -35,46 +35,41 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="{{ url('/') }}">SEHS4517<span>.</span></a></h1>
+        <h1 class="logo me-auto"><a href="{{ url('/') }}">SEHS4517 {{ $locale }}<span>.</span></a></h1>
         <a href="{{ url('/') }}" class="logo me-auto"><img src="{{ config('app.url') }}img/logo.png" alt=""></a>
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                <li><a href="{{ url('/blog') }}">Blog</a></li>
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                @foreach ($menus as $menu)
+                    @if (count($menu->children) > 0 )
+                        <li class="dropdown" {{ Request::url() === url($menu->url) ? 'active' : '' }}><a href="{{ url($menu->url) }}"><span>{{ $menu->{'title_' . $locale} }}</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
+                                @foreach ($menu->children as $child)
+                                    <li><a href="{{ url($child->url) }}">{{ $child->title_en }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                @auth
-                    @if (auth()->user()->is_super_admin)
-                        <li onclick="check_active('admin-area')"><a id="admin-area" data-scroll
-                                                                    href="{{ route('admin_settings') }}">Admin Area</a></li>
+                    @else
+                        @if($menu->parent_id == null)
+                            <li><a class="nav-link scrollto {{ Request::url() === url($menu->url) ? 'active' : '' }}" href="{{ url($menu->url) }}">{{ $menu->{'title_' . $locale} }}</a></li>
+                        @endif
                     @endif
-                @endauth
+                @endforeach
+                @if($locale == 'en')
+                    <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'tc']) }}">中文</a></li>
+                @else
+                    <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'en']) }}">English</a></li>
+                @endif
+
+
+{{--                @auth--}}
+{{--                    @if (auth()->user()->is_super_admin)--}}
+{{--                        <li onclick="check_active('admin-area')"><a id="admin-area" data-scroll href="{{ route('admin_settings') }}">Admin</a></li>--}}
+{{--                    @endif--}}
+{{--                @endauth--}}
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-
-        <a href="#about" class="get-started-btn scrollto">Get Started</a>
     </div>
 </header><!-- End Header -->
 

@@ -1,7 +1,14 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'tc'])) {
+        abort(400);
+    }
+    session()->put('locale', $locale);
+    return redirect()->back();
+})->name('change-language');
 
 Route::get('/', function () {
     return view('index');
@@ -30,7 +37,7 @@ Route::view('/services', 'services');
 
 // Route::get('/admin/',[AdminController::class,'index'])->name("admins");
 
-Auth::routes();
+//Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
