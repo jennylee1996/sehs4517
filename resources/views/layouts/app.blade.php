@@ -35,7 +35,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="{{ url('/') }}">SEHS4517 {{ $locale }}<span>.</span></a></h1>
+        <h1 class="logo me-auto"><a href="{{ url('/') }}">SEHS4517<span>.</span></a></h1>
         <a href="{{ url('/') }}" class="logo me-auto"><img src="{{ config('app.url') }}img/logo.png" alt=""></a>
 
         <nav id="navbar" class="navbar order-last order-lg-0">
@@ -45,7 +45,7 @@
                         <li class="dropdown" {{ Request::url() === url($menu->url) ? 'active' : '' }}><a href="{{ url($menu->url) }}"><span>{{ $menu->{'title_' . $locale} }}</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                                 @foreach ($menu->children as $child)
-                                    <li><a href="{{ url($child->url) }}">{{ $child->title_en }}</a></li>
+                                    <li><a href="{{ url($child->url) }}">{{ $child->{'title_' . $locale} }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
