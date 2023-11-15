@@ -72,13 +72,13 @@ class MenuTableSeeder extends Seeder
             [
                 'title_en' => 'Sports',
                 'title_tc' => '運動',
-                'url' => '/new-services/sports',
+                'url' => '/youth-services/sports',
                 'parent_id' => 4,
             ],
             [
                 'title_en' => 'Language',
                 'title_tc' => '語言',
-                'url' => '/new-services/language',
+                'url' => '/youth-services/language',
                 'parent_id' => 4,
             ],
             [

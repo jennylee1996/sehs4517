@@ -22,30 +22,36 @@ Route::get('/new-services', function () {
     return view('new-services');
 });
 
-Route::prefix('new-services')->group(function () {
+Route::get('/youth-services', function () {
+    return view('youth-services');
+});
+
+Route::prefix('youth-services')->group(function () {
     Route::get('sports', function () {
         return view('sports');
     });
 });
 
-Route::get('/youth-services', function () {
-    return view('youth-services');
-});
 Route::get('/welling-for-youths', function () {
     return view('welling-for-youths');
 });
+
 Route::get('/welling-for-elders', function () {
     return view('welling-for-elders');
 });
+
 Route::get('/leisure-zone', function () {
     return view('leisure-zone');
 });
+
 Route::get('/gallery', function () {
     return view('gallery');
 });
+
 Route::get('/contact', function () {
     return view('contact');
 });
+
 Route::get('/login', function () {
     return view('login');
 });
