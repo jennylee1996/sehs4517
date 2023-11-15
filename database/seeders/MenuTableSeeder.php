@@ -23,7 +23,7 @@ class MenuTableSeeder extends Seeder
             ],
             [
                 'title_en' => 'About Us',
-                'title_tc' => 'About Us',
+                'title_tc' => '關於我們',
                 'url' => '/about-us',
                 'parent_id' => null,
             ],
@@ -98,6 +98,12 @@ class MenuTableSeeder extends Seeder
                 'title_tc' => '小遊戲',
                 'url' => 'leisure-zone/game',
                 'parent_id' => 7,
+            ],
+            [
+                'title_en' => 'Login',
+                'title_tc' => '登入',
+                'url' => '/login',
+                'parent_id' => null,
             ]
         ]);
     }

@@ -4,10 +4,10 @@
     <section class="breadcrumbs">
         <div class="container">
             <ol>
-                <li><a href="index.blade.php">Home</a></li>
-                <li>Blog</li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li>Welling & Activities for Elders</li>
             </ol>
-            <h2>Blog</h2>
+            <h2>Welling & Activities for Elders</h2>
         </div>
     </section><!-- End Breadcrumbs -->
     <!-- ======= Blog Section ======= -->

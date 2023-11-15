@@ -5,7 +5,7 @@
         <div class="container">
 
             <ol>
-                <li><a href="index.blade.php">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li>Inner Page</li>
             </ol>
             <h2>Inner Page</h2>
