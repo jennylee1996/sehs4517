@@ -6,9 +6,9 @@
 
             <ol>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Inner Page</li>
+                <li>Sports</li>
             </ol>
-            <h2>Inner Page</h2>
+            <h2>Sports</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->

@@ -38,6 +38,15 @@
         <h1 class="logo me-auto"><a href="{{ url('/') }}">SEHS4517<span>.</span></a></h1>
         <a href="{{ url('/') }}" class="logo me-auto"><img src="{{ config('app.url') }}img/logo.png" alt=""></a>
 
+        <!-- Temp. Register -->
+        <a href="{{ url('/register') }}">[R]</a>
+
+        <!-- Temp. Member Profile -->
+        <a href="{{ url('/member-profile') }}">[P]</a>
+
+        <!-- Temp. Member Enrolled Activities -->
+        <a href="{{ url('/member-enrolled-activities') }}">[EA]</a>
+
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 @foreach ($menus as $menu)
@@ -58,7 +67,7 @@
                 @if($locale == 'en')
                     <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'tc']) }}">中文</a></li>
                 @else
-                    <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'en']) }}">English</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'en']) }}">EN</a></li>
                 @endif
 
 
@@ -90,9 +99,9 @@
         <div class="social-links text-center text-md-end pt-3 pt-md-0">
             <div class="copyright">
                 <br><br>
-                &copy; Copyright <strong><span>SHES4517</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>SEHS4517</span></strong>. All Rights Reserved
             </div>
-            <div class="credits"> Designed by SHES4517 Group 3</div>
+            <div class="credits"> Designed by SEHS4517 Group 1</div>
         </div>
     </div>
 </footer><!-- End Footer -->
