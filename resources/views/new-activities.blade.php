@@ -6,9 +6,9 @@
 
             <ol>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li>New Services & Courses </li>
+                <li>New Activities</li>
             </ol>
-            <h2>New Services & Courses</h2>
+            <h2>New Activities</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -18,7 +18,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Services</h2>
+                <h2>New Activities</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
                     consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
             </div>

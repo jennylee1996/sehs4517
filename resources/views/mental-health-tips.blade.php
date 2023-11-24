@@ -5,9 +5,9 @@
         <div class="container">
             <ol>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Welling & Activities for Elders</li>
+                <li>Mental Health Tips</li>
             </ol>
-            <h2>Welling & Activities for Elders</h2>
+            <h2>Mental Health Tips</h2>
         </div>
     </section><!-- End Breadcrumbs -->
     <!-- ======= Blog Section ======= -->

@@ -6,9 +6,9 @@
 
             <ol>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Leisure Zone</li>
+                <li>Manage Stress</li>
             </ol>
-            <h2>Leisure Zone</h2>
+            <h2>Manage Stress</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->

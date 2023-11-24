@@ -6,9 +6,9 @@
 
             <ol>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Inner Page</li>
+                <li>Contact us</li>
             </ol>
-            <h2>Inner Page</h2>
+            <h2>Contact us</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -18,7 +18,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Contact</h2>
+                <h2>Contact us</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
                     consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
             </div>

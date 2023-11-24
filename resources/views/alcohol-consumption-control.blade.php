@@ -6,9 +6,9 @@
 
             <ol>
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Leisure Zone</li>
+                <li>Alcohol Consumption Control</li>
             </ol>
-            <h2>Leisure Zone</h2>
+            <h2>Alcohol Consumption Control</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
