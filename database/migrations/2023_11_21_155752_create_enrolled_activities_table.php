@@ -14,12 +14,12 @@ class CreateEnrolledActivitiesTable extends Migration
     public function up()
     {
         Schema::create('enrolled_activities', function (Blueprint $table) {
-            $table->bigInteger('member_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('activity_id')->unsigned();
             $table->date('enroll_date');
             $table->char('enroll_status');
-            $table->primary(['member_id', 'activity_id']);
-            $table->foreign('member_id')->references('id')->on('members');
+            $table->primary(['user_id', 'activity_id']);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('activity_id')->references('id')->on('activities');
             $table->timestamps();
         });

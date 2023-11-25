@@ -121,15 +121,18 @@ Route::get('/contact', function () {
 //});
 
 Route::get('/login', function () {
-    return view('auth.login');
+    return view('auth.loginR1');
 })->name('login');
 
 // add route for 'login' page after submitting request form
-// Route::post('/login-submit', [App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('login-submit');
+Route::post('/login-submit', [App\Http\Controllers\Auth\LoginControllerR1::class, 'authenticate'])->name('login-submit');
+
+// add route for 'logout' page
+Route::get('/logout', [App\Http\Controllers\Auth\LogoutControllerR1::class, 'logout'])->name('logout');
 
 // add route for 'register' page
 Route::get('/register', function () {
-    return view('auth.register');
+    return view('auth.registerR1');
 })->name('register');
 
 // add route for 'register' page after submitting request form

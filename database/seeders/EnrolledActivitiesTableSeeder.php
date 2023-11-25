@@ -16,67 +16,67 @@ class EnrolledActivitiesTableSeeder extends Seeder
     {
         DB::table('enrolled_activities')->insert([
             [
-                'member_id' => 1,
+                'user_id' => 1,
                 'activity_id' => 2,
                 'enroll_date' => '2023-10-10',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 2,
+                'user_id' => 2,
                 'activity_id' => 2,
                 'enroll_date' => '2023-10-15',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 3,
+                'user_id' => 3,
                 'activity_id' => 3,
                 'enroll_date' => '2023-10-15',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 4,
+                'user_id' => 4,
                 'activity_id' => 3,
                 'enroll_date' => '2023-10-20',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 1,
+                'user_id' => 1,
                 'activity_id' => 6,
                 'enroll_date' => '2023-10-20',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 2,
+                'user_id' => 2,
                 'activity_id' => 6,
                 'enroll_date' => '2023-10-20',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 3,
+                'user_id' => 3,
                 'activity_id' => 7,
                 'enroll_date' => '2023-10-15',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 4,
+                'user_id' => 4,
                 'activity_id' => 7,
                 'enroll_date' => '2023-10-15',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 1,
+                'user_id' => 1,
                 'activity_id' => 10,
                 'enroll_date' => '2023-10-25',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 2,
+                'user_id' => 2,
                 'activity_id' => 10,
                 'enroll_date' => '2023-10-25',
                 'enroll_status' => 1
             ],
             [
-                'member_id' => 3,
+                'user_id' => 3,
                 'activity_id' => 10,
                 'enroll_date' => '2023-10-31',
                 'enroll_status' => 1

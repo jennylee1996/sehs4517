@@ -11,12 +11,13 @@ class MemberEnrolledActivitiesController extends Controller
 {
     public function show()
     {
-        $id = 2;
-        // create user obj by selecting member id
-        $data = DB::table('members')
-            ->join('enrolled_activities', 'members.id', '=', 'enrolled_activities.member_id')
+        // create user obj by selecting user id
+        $id = auth()->user()->id;
+
+        $data = DB::table('users')
+            ->join('enrolled_activities', 'users.id', '=', 'enrolled_activities.user_id')
             ->join('activities', 'activities.id', '=', 'enrolled_activities.activity_id')
-            ->where('members.id', '=', $id)
+            ->where('users.id', '=', $id)
             ->select('activities.id', 'activities.acty_name', 'activities.acty_start_date', 'enrolled_activities.enroll_date')
             ->get();
 
