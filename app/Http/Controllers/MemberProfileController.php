@@ -10,8 +10,9 @@ class MemberProfileController extends Controller
 {
     public function show()
     {
-        $id = 2;
         // create user obj by selecting member id
+        $id = auth()->user()->id;
+
         $user = User::find($id);
 
         return view('member-profile', ['user' => $user]);

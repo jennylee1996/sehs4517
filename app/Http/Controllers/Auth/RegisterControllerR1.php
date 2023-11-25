@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 
-class RegisterController extends Controller
+class RegisterControllerR1 extends Controller
 {
     public function register(Request $request)
     {
@@ -15,7 +15,7 @@ class RegisterController extends Controller
         $validatedData = $request->validate([
             'fname' => 'required|string|max:255',
             'lname' => 'required|string|max:255',
-            'pw' => 'required|string|min:8', // |confirmed
+            'password' => 'required|string|min:8', // |confirmed
             'dob' => 'required|date', // date_format:Y-m-d
             'phone' => 'required|numeric|min:8',
             'email' => 'required|string|max:255'
@@ -25,7 +25,7 @@ class RegisterController extends Controller
         $user = User::create([
             'fname' => $validatedData['fname'],
             'lname' => $validatedData['lname'],
-            'pw' => $validatedData['pw'], // Hash::make()
+            'password' => Hash::make($validatedData['password']),
             'dob' => $validatedData['dob'],
             'phone' => $validatedData['phone'],
             'email' => $validatedData['email'],

@@ -38,15 +38,6 @@
         <h1 class="logo me-auto"><a href="{{ url('/') }}">SEHS4517<span>.</span></a></h1>
         <a href="{{ url('/') }}" class="logo me-auto"><img src="{{ config('app.url') }}img/logo.png" alt=""></a>
 
-        <!-- Temp. Register -->
-        <a href="{{ url('/register') }}">[R]</a>
-
-        <!-- Temp. Member Profile -->
-        <a href="{{ url('/member-profile') }}">[P]</a>
-
-        <!-- Temp. Member Enrolled Activities -->
-        <a href="{{ url('/member-enrolled-activities') }}">[EA]</a>
-
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 @foreach ($menus as $menu)
@@ -79,6 +70,24 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
+
+        <nav id="navbar2" class="navbar order-last order-lg-0">
+            <ul>
+                @guest
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                @endguest
+                @auth
+                    <li class="dropdown"><span>Account</span>
+                        <ul>
+                            <li><a href="/member-profile">Profile</a></li>
+                            <li><a href="/member-enrolled-activities">Enrolled Activities</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                @endauth
+            </ul>
+        </nav>
     </div>
 </header><!-- End Header -->
 
