@@ -39,9 +39,10 @@ Route::prefix('new-activities')->group(function () {
         return view('leadership-camp');
     });
 
-    Route::get('enrollment', function () {
-        return view('enrollment');
-    });
+    // add route for 'enrollment' page
+    Route::get('/enrollment', 'App\Http\Controllers\ActivitiesController@showForm' );
+    // add route for 'enrollment' page after submitting request form
+    Route::post('/enrollment-submit', [App\Http\Controllers\Enrolled_activitiesController::class, 'enrollment'])->name('enrollment-submit');
 });
 
 Route::get('/youth-services', function () {

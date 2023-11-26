@@ -8,7 +8,7 @@
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li>Gallery</li>
             </ol>
-            <h2>Gallery</h2>
+            <h2>Past Activities Gallery</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -19,171 +19,161 @@
 
             <div class="section-title">
                 <h2>Gallery</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+                <p></p>
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
+                        <li data-filter=".filter-sport">Sport</li>
+                        <li data-filter=".filter-language">Language</li>
+                        <li data-filter=".filter-leadership">Leadership</li>
                     </ul>
                 </div>
             </div>
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-sport">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/bball.png" class="img-fluid portfolio-img" width= "400px" height= "400px" alt="">
                         <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
+                            <h4>Basketball class</h4>
+                            <p>sport</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-1.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/bball.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Basketball class at 2019-10-10"><i class="bx bx-plus"></i></a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-language">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/eng1.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
+                            <h4>English class</h4>
+                            <p>language</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-2.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/eng1.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="English class at 2018-5-6"><i class="bx bx-plus"></i></a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-sport">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/bball2.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
+                            <h4>Basketball class</h4>
+                            <p>sport</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-3.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/bball2.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Basketball class at 2021-12-4"><i class="bx bx-plus"></i></a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-leadership">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/teen1.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
+                            <h4>Leadership class</h4>
+                            <p>leadership</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-4.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/teen1.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Leadership class at 2021-12-4"><i class="bx bx-plus"></i></a>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-language">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/jlan.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
+                            <h4>Japanese class</h4>
+                            <p>language</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-5.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/jlan.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Japanese class at 2022-1-7"><i class="bx bx-plus"></i></a>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-language">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/jlan2.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
+                            <h4>Japanese class</h4>
+                            <p>language</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-6.jpg"
+                                <a href="{{ config('app.url') }}img/jlan2.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Japanese class at 2022-11-27"><i class="bx bx-plus"></i></a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-sport">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/fball.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
+                            <h4>Football class</h4>
+                            <p>sport</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-7.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/fball.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Football class at 2020-5-2"><i class="bx bx-plus"></i></a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-leadership">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/teen2.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
+                            <h4>Leadership class </h4>
+                            <p>leadership</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-8.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/teen2.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Leadership class at 2022-4-6"><i class="bx bx-plus"></i></a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-leadership">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/dan1.png" class="img-fluid  portfolio-img" alt="">
                         <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
+                            <h4>Leadership class</h4>
+                            <p>leadership</p>
                             <div class="portfolio-links">
-                                <a href="{{ config('app.url') }}img/portfolio/portfolio-9.jpg"
+                                <a href="{{ config('app.url') }}img/portfolio/dan1.png"
                                    data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="{{url('/portfolio-details')}}" title="More Details"><i
-                                        class="bx bx-link"></i></a>
+                                   class="portfolio-lightbox" title="Leadership class at 2023-9-10"><i class="bx bx-plus"></i></a>
+                                
                             </div>
                         </div>
                     </div>
