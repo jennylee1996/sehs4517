@@ -11,21 +11,26 @@ class Enrolled_activitiesController extends Controller
   public function enrollment(Request $request)
   {
    
-      $id = $request['activity_id'];
-      $activities = Activities::findOrFail($id);
+    $id = $request['activity_id'];
+    $activity = Activities::findOrFail($id);
+    $activity_end_date = $activity->acty_end_date;
 
       $validatedData = $request->validate([ 
           'user_id' => 'required|numeric|max:255',
           'activity_id' => 'required|numeric|max:255',
           'enroll_status' => 'required|numeric',
-          'enroll_date' => 'required|date',  // date_format:Y-m-d 
-      ]);
-     // $validatedData['enroll_date']= date("Y-m-d", strtotime($validatedData['enroll_date']));
-     // if($validatedData['enroll_date'] >= $activities['acty_end_date']){
-     //   session()->flash('msg', 'Please choose a correct pick-up date.');
-     //   return redirect('/activities-enrollment');
-     // }
-     
+          'enroll_date' => [
+            'required',
+            'date',
+            function ($attribute, $enrollDate, $fail) use ($activity_end_date) {
+                if ($enrollDate >= $activity_end_date) {
+                    $fail('The enrollment date must be before the activity end date.');
+                }
+            }
+        ],
+    ]);
+      
+     try {
       // create enrollment obj and insert into db
       $enrolled_activities = Enrolled_activities::create([
           'user_id' => $validatedData['user_id'],
@@ -34,7 +39,10 @@ class Enrolled_activitiesController extends Controller
           'enroll_status' => $validatedData['enroll_status'],
 
       ]);
-
+      
       return back()->withStatus('Passed');
+        } catch (\Exception $e) {
+    return back()->withErrors(['error' => 'Failed to enroll. Please try again.']);
+}
   }
 }

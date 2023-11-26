@@ -74,15 +74,8 @@
                                         <label for="user_id" class="col-md-4 col-form-label text-md-right">User ID</label>
                                         
                                         <div class="col-md-6">
-                                            <input id="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror" name="user_id" 
+                                            <input id="user_id" type="text" class="form-control" name="user_id" 
                                                 required autocomplete="user_id" autofocus>
-                                            
-                                            @error('user_id')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
                                         </div>
                                     </div>
 
@@ -90,19 +83,13 @@
                                         <label for="activity_id" class="col-md-4 col-form-label text-md-right">Activity:</label>
                                         
                                         <div class="col-md-6">
-                                            <select name="activity_id" id="activity_id" class="form-control @error('activity_id') is-invalid @enderror" 
+                                            <select name="activity_id" id="activity_id" class="form-control" 
                                                 required autocomplete="activity_id" autofocus>
                                 
-                                                    <option value=" "> </option>
+                                                    <option value=""> </option>
                                                     @foreach($activities as $activity)
                                                             <option value="{{ $activity->id }}">{{ $activity->acty_name }}</option>
                                                     @endforeach
-
-                                                    @error('activity_id')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
                                             </select>
                                         </div>
                                     </div>
@@ -135,6 +122,19 @@
                 </div>
             </div>  
     <!-- End activities-enrollment form -->     
+        <div class="card-body">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    
+        </div>
+    
     </section>
 @endsection
 
