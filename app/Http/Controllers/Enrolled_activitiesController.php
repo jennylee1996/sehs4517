@@ -16,7 +16,7 @@ class Enrolled_activitiesController extends Controller
     $activity_end_date = $activity->acty_end_date;
 
       $validatedData = $request->validate([ 
-          'user_id' => 'required|numeric|max:255',
+          //'user_id' => 'required|numeric|max:255',
           'activity_id' => 'required|numeric|max:255',
           'enroll_status' => 'required|numeric',
           'enroll_date' => [
@@ -32,15 +32,16 @@ class Enrolled_activitiesController extends Controller
       
      try {
       // create enrollment obj and insert into db
+      $id = auth()->user()->id;
       $enrolled_activities = Enrolled_activities::create([
-          'user_id' => $validatedData['user_id'],
+          'user_id' => $id,
           'activity_id' => $validatedData['activity_id'],
           'enroll_date' => $validatedData['enroll_date'], 
           'enroll_status' => $validatedData['enroll_status'],
 
       ]);
       
-      return back()->withStatus('Passed');
+      return redirect('/member-enrolled-activities');
         } catch (\Exception $e) {
     return back()->withErrors(['error' => 'Failed to enroll. Please try again.']);
 }

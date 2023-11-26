@@ -70,14 +70,14 @@
                                 <form method="POST" action="{{ route('enrollment-submit') }}"> 
                                     @csrf 
                                     
-                                    <div class="form-group row">
+                                  <!--  <div class="form-group row">
                                         <label for="user_id" class="col-md-4 col-form-label text-md-right">User ID</label>
                                         
                                         <div class="col-md-6">
                                             <input id="user_id" type="text" class="form-control" name="user_id" 
                                                 required autocomplete="user_id" autofocus>
                                         </div>
-                                    </div>
+                                    </div>-->
 
                                     <div class="form-group row">
                                         <label for="activity_id" class="col-md-4 col-form-label text-md-right">Activity:</label>
@@ -86,7 +86,7 @@
                                             <select name="activity_id" id="activity_id" class="form-control" 
                                                 required autocomplete="activity_id" autofocus>
                                 
-                                                    <option value=""> </option>
+                                                    <option value="">Select activity </option>
                                                     @foreach($activities as $activity)
                                                             <option value="{{ $activity->id }}">{{ $activity->acty_name }}</option>
                                                     @endforeach
