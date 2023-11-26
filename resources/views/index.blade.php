@@ -1,48 +1,23 @@
 @extends('layouts.app')
 @section('content')
+<?php
+$locale = session('locale');
+?>
+    @if($locale == 'en')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
 
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <div class="row">
                 <div class="col-xl-6">
-                    <h1>Bettter digital experience with Presento</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                    <h1>Hong Kong Youth Support Association</h1>
+                    <h2>We are team of professionals supporting youth growth</h2>
+                    <a href="#about" class="btn-get-started scrollto">Stay tuned</a>
                 </div>
             </div>
         </div>
 
     </section><!-- End Hero -->
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-        <div class="container" data-aos="zoom-in">
-
-            <div class="clients-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-1.png"
-                                                   class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-2.png"
-                                                   class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-3.png"
-                                                   class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-4.png"
-                                                   class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-5.png"
-                                                   class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-6.png"
-                                                   class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-7.png"
-                                                   class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ config('app.url') }}img/clients/client-8.png"
-                                                   class="img-fluid" alt=""></div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-    </section><!-- End Clients Section -->
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
@@ -51,10 +26,9 @@
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch">
                     <div class="content">
-                        <h3>Voluptatem dignissimos provident quasi</h3>
+                        <h3>What is about HKYSA?</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                            Prior to its establishment in 2023, our main service was youth training. We recognized the development and growth of young people in recent years.
                         </p>
                         <a href="#" class="about-btn"><span>About us</span> <i class="bx bx-chevron-right"></i></a>
                     </div>
@@ -64,25 +38,23 @@
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bx bx-receipt"></i>
-                                <h4>Corporis voluptates sit</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-                                    aliquip</p>
+                                <h4>Training Courses</h4>
+                                <p>We aim to provide a wide range of training courses for children and young people.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bx bx-cube-alt"></i>
-                                <h4>Ullamco laboris nisi</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                    deserunt</p>
+                                <h4>Support Services</h4>
+                                <p>We are dedicated to providing comprehensive support services for young people.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bx bx-images"></i>
-                                <h4>Labore consequatur</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                                <h4>Collaboration with Partners</h4>
+                                <p>We strive to work closely with schools, universities, and organizations to develop effective programs.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bx bx-shield"></i>
-                                <h4>Beatae veritatis</h4>
-                                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                                <h4>Sponsorship and Funding</h4>
+                                <p>We are committed to providing sponsorship and funding opportunities.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -92,17 +64,12 @@
         </div>
     </section><!-- End About Section -->
 
-
-
-
-
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Testimonials</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+                <p>Touching Testimonials from HKYSA: How the Association has Helped Shape the Lives of Young People in Hong Kong</p>
             </div>
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -113,13 +80,14 @@
                             <div class="testimonial-item">
                                 <img src="{{ config('app.url') }}img/testimonials/testimonials-1.jpg"
                                      class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
+                                <h3>Jason Tong</h3>
+                                <h4>Program Graduate</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                    rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.
+                                        The Hong Kong Youth Support Association has been instrumental in shaping my career. 
+                                        Through their courses, I gained the necessary skills to excel in my field. The support 
+                                        services provided have given me invaluable guidance and motivation. Thanks to their programs, 
+                                        I am now equipped to pursue my dreams.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -131,13 +99,13 @@
                             <div class="testimonial-item">
                                 <img src="{{ config('app.url') }}img/testimonials/testimonials-2.jpg"
                                      class="testimonial-img" alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
+                                <h3>Michelle Lee</h3>
+                                <h4>Sponsored Beneficiary</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                    cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                    legam anim culpa.
+                                        I am grateful for The Hong Kong Youth Support Association. Their sponsorship and funding made it 
+                                        possible for me to pursue vocational training. The association not only provided financial support 
+                                        but also offered continuous guidance. Today, I have a rewarding career, and I owe my success to them.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -149,13 +117,13 @@
                             <div class="testimonial-item">
                                 <img src="{{ config('app.url') }}img/testimonials/testimonials-3.jpg"
                                      class="testimonial-img" alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
+                                <h3>Emily Chow</h3>
+                                <h4>Counseling Service Recipient</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                    veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                    minim.
+                                        The Hong Kong Youth Support Association is a beacon of hope. Their counseling services helped me navigate 
+                                        personal challenges. The association's commitment to holistic development has transformed my life and the 
+                                        lives of others. I am forever grateful for their support.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -167,13 +135,13 @@
                             <div class="testimonial-item">
                                 <img src="{{ config('app.url') }}img/testimonials/testimonials-4.jpg"
                                      class="testimonial-img" alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
+                                <h3>Alex Wong</h3>
+                                <h4>Course Participant turned Employed Graduate</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                    fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-                                    dolore labore illum veniam.
+                                        The Hong Kong Youth Support Association has been a game-changer. Their training courses allowed me to explore 
+                                        industries and discover my passion. The knowledge and skills I gained have been invaluable in securing a job. 
+                                        I am grateful for their dedication to our growth.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -185,13 +153,13 @@
                             <div class="testimonial-item">
                                 <img src="{{ config('app.url') }}img/testimonials/testimonials-5.jpg"
                                      class="testimonial-img" alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
+                                <h3>Peter Kwok</h3>
+                                <h4>Mentored Graduate</h4>
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                    veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat esse veniam culpa
-                                    fore nisi cillum quid.
+                                        I am grateful for The Hong Kong Youth Support Association. With their mentorship, I gained the confidence to 
+                                        navigate interviews and showcase my skills. Today, I am thriving in my career, and I owe a significant part 
+                                        of my success to their support. Thank you!
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                 </p>
                             </div>
@@ -205,178 +173,14 @@
         </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing section-bg">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Pricing</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="box" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Free</h3>
-                        <h4><sup>$</sup>0<span> / month</span></h4>
-                        <ul>
-                            <li>Aida dere</li>
-                            <li>Nec feugiat nisl</li>
-                            <li>Nulla at volutpat dola</li>
-                            <li class="na">Pharetra massa</li>
-                            <li class="na">Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#" class="btn-buy">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-                    <div class="box featured" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Business</h3>
-                        <h4><sup>$</sup>19<span> / month</span></h4>
-                        <ul>
-                            <li>Aida dere</li>
-                            <li>Nec feugiat nisl</li>
-                            <li>Nulla at volutpat dola</li>
-                            <li>Pharetra massa</li>
-                            <li class="na">Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#" class="btn-buy">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-                    <div class="box" data-aos="fade-up" data-aos-delay="300">
-                        <h3>Developer</h3>
-                        <h4><sup>$</sup>29<span> / month</span></h4>
-                        <ul>
-                            <li>Aida dere</li>
-                            <li>Nec feugiat nisl</li>
-                            <li>Nulla at volutpat dola</li>
-                            <li>Pharetra massa</li>
-                            <li>Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#" class="btn-buy">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-            </div>
-
-            <ul class="faq-list accordion" data-aos="fade-up">
-
-                <li>
-                    <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">Non consectetur a erat nam at
-                        lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                    <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                            curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Feugiat scelerisque varius
-                        morbi enim nunc faucibus a pellentesque? <i class="bx bx-chevron-down icon-show"></i><i
-                            class="bx bx-x icon-close"></i></a>
-                    <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                            laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.
-                            Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
-                            tincidunt dui.
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Dolor sit amet consectetur
-                        adipiscing elit pellentesque habitant morbi? <i class="bx bx-chevron-down icon-show"></i><i
-                            class="bx bx-x icon-close"></i></a>
-                    <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                            elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                            pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at
-                            elementum eu facilisis sed odio morbi quis
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Ac odio tempor orci dapibus.
-                        Aliquam eleifend mi in nulla? <i class="bx bx-chevron-down icon-show"></i><i
-                            class="bx bx-x icon-close"></i></a>
-                    <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                            laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.
-                            Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
-                            tincidunt dui.
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Tempus quam pellentesque nec
-                        nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                            class="bx bx-x icon-close"></i></a>
-                    <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                            ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing
-                            bibendum est. Purus gravida quis blandit turpis cursus in
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Tortor vitae purus faucibus
-                        ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i
-                            class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
-                    <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-                        <p>
-                            Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer
-                            malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem
-                            dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat
-                            commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non
-                            blandit massa enim nec.
-                        </p>
-                    </div>
-                </li>
-
-            </ul>
-
-        </div>
-    </section><!-- End Frequently Asked Questions Section -->
-
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
                 <h2>Team</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+                <p>We are a team of professionals who aim to support youth growth, including experienced educators, trainers, psychologists and 
+                    volunteers. </p>
             </div>
 
             <div class="row">
@@ -412,7 +216,7 @@
                         </div>
                         <div class="member-info">
                             <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
+                            <span>Program Manager</span>
                         </div>
                     </div>
                 </div>
@@ -430,7 +234,7 @@
                         </div>
                         <div class="member-info">
                             <h4>William Anderson</h4>
-                            <span>CTO</span>
+                            <span>Senior Psychologist</span>
                         </div>
                     </div>
                 </div>
@@ -448,7 +252,7 @@
                         </div>
                         <div class="member-info">
                             <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
+                            <span>Funding Officer</span>
                         </div>
                     </div>
                 </div>
@@ -457,4 +261,257 @@
 
         </div>
     </section><!-- End Team Section -->
+    @endif
+    @if($locale == 'tc')
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <div class="row">
+                <div class="col-xl-6">
+                    <h1>香港青年支援協會</h1>
+                    <h2>我們是一個支援青少年的專業團隊</h2>
+                    <a href="#about" class="btn-get-started scrollto">了解</a>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row no-gutters">
+                <div class="content col-xl-5 d-flex align-items-stretch">
+                    <div class="content">
+                        <h3>HKYSA是什麼組織?</h3>
+                        <p>
+                            在2023年成立之前，我們的主要服務是青年培訓。我們認識到近年來年輕人的發展和成長。
+                        </p>
+                        <a href="#" class="about-btn"><span>有關我們</span> <i class="bx bx-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-stretch">
+                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <i class="bx bx-receipt"></i>
+                                <h4>培訓課程</h4>
+                                <p>我們旨在為兒童和年輕人提供各種培訓課程，幫助他們發展職業技能。</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                                <i class="bx bx-cube-alt"></i>
+                                <h4>支持服務</h4>
+                                <p>除了培訓課程外，我們致力於為年輕人提供全面的支持服務。</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                                <i class="bx bx-images"></i>
+                                <h4>合作夥伴</h4>
+                                <p>我們努力與學校、大學和組織密切合作，開發滿足年輕人需求的有效計劃。</p>
+                            </div>
+                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                                <i class="bx bx-shield"></i>
+                                <h4>贊助和資助</h4>
+                                <p>為了進一步實現我們的目標，我們致力於提供贊助和資助機會。</p>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>推薦</h2>
+                <p>以下是有關香港青年支援協會的感人推薦：如何幫助塑造香港年輕人的生活</p>
+            </div>
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <img src="{{ config('app.url') }}img/testimonials/testimonials-1.jpg"
+                                     class="testimonial-img" alt="">
+                                <h3>康傑生</h3>
+                                <h4>項目畢業生</h4>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        香港青年支援協會對塑造我的職業生涯起到了關鍵作用。通過他們的課程，我獲得了在我的領域中脫穎而出所需的技能。提供的
+                                        支持服務為我提供了寶貴的指導和動力。由於他們的項目，我現在有能力追求自己的夢想。
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <img src="{{ config('app.url') }}img/testimonials/testimonials-2.jpg"
+                                     class="testimonial-img" alt="">
+                                <h3>李美雪</h3>
+                                <h4>助受益人</h4>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        我感激香港青年支援協會。他們的讚助和資金使我有可能接受職業培訓。該協會不僅提供了財務支持，還提供了持續的指導。今天，
+                                        我擁有一個有意義的職業，我要歸功於他們。
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <img src="{{ config('app.url') }}img/testimonials/testimonials-3.jpg"
+                                     class="testimonial-img" alt="">
+                                <h3>周安妮</h3>
+                                <h4>咨詢服務接受者</h4>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        香港青年支援協會是一盞希望之燈。他們的咨詢服務幫助我應對個人挑戰。該協會致力於全面發展，改變了我的生活和他人的生活。
+                                        我永遠感激他們的支持。
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <img src="{{ config('app.url') }}img/testimonials/testimonials-4.jpg"
+                                     class="testimonial-img" alt="">
+                                <h3>黃亞力</h3>
+                                <h4>課程參與者轉為就業畢業生</h4>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        香港青年支援協會是一個改變遊戲規則的機構。他們的培訓課程使我能夠探索行業並發現我的熱情。我獲得的知識和技能在確保工作
+                                        方面具有無價值。我感激他們對我們成長的奉獻。
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <img src="{{ config('app.url') }}img/testimonials/testimonials-5.jpg"
+                                     class="testimonial-img" alt="">
+                                <h3>郭彼德</h3>
+                                <h4>指導的畢業生</h4>
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        我感激香港青年支援協會。在他們的指導下，我獲得了自信，可以應對面試並展示我的技能。今天，我在我的職業中蓬勃發展，我要把
+                                        我成功的重要部分歸功於他們。謝謝！
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>團隊</h2>
+                <p>我們是一支專業團隊，旨在支持青年成長，包括經驗豐富的教育家、培訓師、心理學家和志願者。</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="{{ config('app.url') }}img/team/team-1.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Walter White</h4>
+                            <span>行政總裁</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="{{ config('app.url') }}img/team/team-2.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>項目經理</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member-img">
+                            <img src="{{ config('app.url') }}img/team/team-3.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>William Anderson</h4>
+                            <span>資深心理學家</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="400">
+                        <div class="member-img">
+                            <img src="{{ config('app.url') }}img/team/team-4.jpg" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Amanda Jepson</h4>
+                            <span>資助經理</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Team Section -->
+    @endif
 @endsection
