@@ -28,42 +28,41 @@ class MenuTableSeeder extends Seeder
                 'parent_id' => null,
             ],
             [
-                'title_en' => 'News', // 3
-                'title_tc' => '最新消息',
-                'url' => '/news',
+                'title_en' => 'Gallery', // 3
+                'title_tc' => '相簿',
+                'url' => '/gallery',
                 'parent_id' => null,
             ],
             [
                 'title_en' => 'New Activities', // 4
                 'title_tc' => '最新活動',
-                'url' => '/new-activities',
+                'url' => '/new-activities/sports', // redirect to 1st sub-menu
                 'parent_id' => null,
             ],
             [
                 'title_en' => 'Youth Services', // 5
-                'title_tc' => '青年活動',
-                'url' => '/youth-services',
+                'title_tc' => '青年服務',
+                'url' => '/youth-services/education', // redirect to 1st sub-menu
                 'parent_id' => null,
             ],
             [
                 'title_en' => 'Welling for Youths', // 6
                 'title_tc' => '樂活青年',
-                'url' => '/welling-for-youths',
+                'url' => '/welling-for-youths/smoking-cessation', // redirect to 1st sub-menu
                 'parent_id' => null,
             ],
             [
-                'title_en' => 'Mental Health Tips',
-                'title_tc' => '心理健康錦囊', // 7
-                'url' => '/mental-health-tips',
+                'title_en' => 'Mental Health Tips', // 7
+                'title_tc' => '心理健康錦囊',
+                'url' => '/mental-health-tips/build-self-confidence', // redirect to 1st sub-menu
                 'parent_id' => null,
             ],
             [
                 'title_en' => 'Leisure Zone', // 8
                 'title_tc' => '休閒空間',
-                'url' => '/leisure-zone',
+                'url' => '/leisure-zone/questionnaire', // redirect to 1st sub-menu
                 'parent_id' => null,
-            ],
-            
+            ],         
             [
                 'title_en' => 'Contact us', // 9
                 'title_tc' => '聯絡我們',
@@ -143,12 +142,6 @@ class MenuTableSeeder extends Seeder
                 'parent_id' => 7,
             ],
             [
-                'title_en' => 'Gallery',
-                'title_tc' => '相簿',
-                'url' => '/leisure-zone/gallery',
-                'parent_id' => 8,
-            ],
-            [
                 'title_en' => 'Questionnaire',
                 'title_tc' => '問卷調查',
                 'url' => '/leisure-zone/questionnaire',
@@ -160,12 +153,21 @@ class MenuTableSeeder extends Seeder
                 'url' => 'leisure-zone/game',
                 'parent_id' => 8,
             ],
-            [
-                'title_en' => 'Login',
-                'title_tc' => '登入',
-                'url' => '/login',
-                'parent_id' => null,
-            ]
+
         ]);
     }
 }
+/*
+[
+    'title_en' => 'News', 
+    'title_tc' => '最新消息',
+    'url' => '/news',
+    'parent_id' => null,
+],
+[
+    'title_en' => 'Login',
+    'title_tc' => '登入',
+    'url' => '/login',
+    'parent_id' => null,
+]
+*/

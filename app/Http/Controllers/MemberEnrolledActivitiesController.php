@@ -18,9 +18,9 @@ class MemberEnrolledActivitiesController extends Controller
             ->join('enrolled_activities', 'users.id', '=', 'enrolled_activities.user_id')
             ->join('activities', 'activities.id', '=', 'enrolled_activities.activity_id')
             ->where('users.id', '=', $id)
-            ->select('activities.id', 'activities.acty_name', 'activities.acty_start_date', 'enrolled_activities.enroll_date')
+            ->select('activities.id', 'activities.acty_name', 'activities.acty_start_date', 'enrolled_activities.enroll_date', 'enrolled_activities.enroll_status')
             ->get();
-
+        
         return view('member-enrolled-activities', ['data' => $data]);   
     }
 }

@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
             ActivityTypesTableSeeder::class,
             ActivitiesTableSeeder::class,
             EnrolledActivitiesTableSeeder::class,
-            AdminsTableSeeder::class,
         ]);
     }
 }

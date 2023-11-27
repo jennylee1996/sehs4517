@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
                 'dob' => '1995-01-01',
                 'phone' => 67890543,
                 'email' => 'johndoe@gmail.com',
+                'user_role' => 0,
                 'user_status' => 1
             ],
             [
@@ -33,6 +34,7 @@ class UsersTableSeeder extends Seeder
                 'dob' => '1996-01-01',
                 'phone' => 67890542,
                 'email' => 'alicewong@gmail.com',
+                'user_role' => 0,
                 'user_status' => 1
             ],
             [
@@ -43,6 +45,7 @@ class UsersTableSeeder extends Seeder
                 'dob' => '1994-01-01',
                 'phone' => 67890541,
                 'email' => 'peterchan@gmail.com',
+                'user_role' => 0,
                 'user_status' => 1
             ],
             [
@@ -53,6 +56,7 @@ class UsersTableSeeder extends Seeder
                 'dob' => '1996-06-01',
                 'phone' => 67890540,
                 'email' => 'tomholand@gmail.com',
+                'user_role' => 0,
                 'user_status' => 1
             ],
             [
@@ -63,6 +67,29 @@ class UsersTableSeeder extends Seeder
                 'dob' => '1990-01-01',
                 'phone' => 67890545,
                 'email' => 'marylee@gmail.com',
+                'user_role' => 0,
+                'user_status' => 1
+            ],
+            [
+                'id' => 6,
+                'fname' => 'Louis',
+                'lname' => 'Vutton',
+                'password' => '$2y$10$969geIPD3SaF4a3uUSy90ezg0kU7/ke.boQKKWtH4g3hcWpcUnley', // abcd1234
+                'dob' => '1980-01-01',
+                'phone' => 67810543,
+                'email' => 'louisvutton@gmail.com',
+                'user_role' => 0,
+                'user_status' => 1
+            ],
+            [
+                'id' => 7,
+                'fname' => 'Richard',
+                'lname' => 'Gum',
+                'password' => '$2y$10$969geIPD3SaF4a3uUSy90ezg0kU7/ke.boQKKWtH4g3hcWpcUnley', // abcd1234
+                'dob' => '1980-01-01',
+                'phone' => 67810542,
+                'email' => 'richardgum@gmail.com',
+                'user_role' => 0,
                 'user_status' => 1
             ]
         ]);
