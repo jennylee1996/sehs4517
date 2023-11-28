@@ -57,7 +57,7 @@
                             </div>
                         </div>
 
-                    </article><!-- End blog entry -->
+                    </article>
 
                     <article class="entry">
 
@@ -86,7 +86,7 @@
                             </div>
                         </div>
 
-                    </article><!-- End blog entry -->                            
+                    </article>                           
                 </div>
             </section>
     <!--End Content -->
@@ -147,7 +147,7 @@
                             </div>
                         </div>
 
-                    </article><!-- End blog entry -->
+                    </article>
 
                     <article class="entry">
 
@@ -177,7 +177,7 @@
                             </div>
                         </div>
 
-                    </article><!-- End blog entry -->                            
+                    </article>                       
                 </div>
             </section>
     <!--End Content -->
