@@ -52,9 +52,9 @@ class MenuTableSeeder extends Seeder
                 'parent_id' => null,
             ],
             [
-                'title_en' => 'Mental Health Tips',
-                'title_tc' => '心理健康錦囊', // 7
-                'url' => '/mental-health-tips/build-self-confidence', // redirect to 1st sub-menu
+                'title_en' => 'Mental Health Tips', // 7
+                'title_tc' => '心理健康錦囊',
+                'url' => '/mental-health-tips',
                 'parent_id' => null,
             ],
             [
@@ -62,8 +62,7 @@ class MenuTableSeeder extends Seeder
                 'title_tc' => '休閒空間',
                 'url' => '/leisure-zone/questionnaire', // redirect to 1st sub-menu
                 'parent_id' => null,
-            ],
-            
+            ],         
             [
                 'title_en' => 'Contact us', // 9
                 'title_tc' => '聯絡我們',
@@ -153,21 +152,7 @@ class MenuTableSeeder extends Seeder
                 'title_tc' => '小遊戲',
                 'url' => 'leisure-zone/game',
                 'parent_id' => 8,
-            ],
+            ]
         ]);
     }
 }
-/*
-[
-    'title_en' => 'News', 
-    'title_tc' => '最新消息',
-    'url' => '/news',
-    'parent_id' => null,
-],
-[
-    'title_en' => 'Login',
-    'title_tc' => '登入',
-    'url' => '/login',
-    'parent_id' => null,
-]
-*/

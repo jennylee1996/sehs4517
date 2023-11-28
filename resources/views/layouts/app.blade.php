@@ -40,6 +40,7 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
+                <!-- retrieve memnu list details from database -->
                 @foreach ($menus as $menu)
                     @if (count($menu->children) > 0 )
                         <li class="dropdown" {{ Request::url() === url($menu->url) ? 'active' : '' }}><a href="{{ url($menu->url) }}"><span>{{ $menu->{'title_' . $locale} }}</span> <i class="bi bi-chevron-down"></i></a>

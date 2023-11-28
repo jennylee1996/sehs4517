@@ -20,7 +20,7 @@ class MemberEnrolledActivitiesController extends Controller
             ->where('users.id', '=', $id)
             ->select('activities.id', 'activities.acty_name', 'activities.acty_start_date', 'enrolled_activities.enroll_date', 'enrolled_activities.enroll_status')
             ->get();
-
+        
         return view('member-enrolled-activities', ['data' => $data]);   
     }
 }

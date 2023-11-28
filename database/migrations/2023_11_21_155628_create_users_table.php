@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone');
             $table->char('user_role');
             $table->string('email');
+            $table->char('user_role');
             $table->char('user_status');
             $table->timestamps();
         });

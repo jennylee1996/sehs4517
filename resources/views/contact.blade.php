@@ -8,7 +8,6 @@
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li>Contact us</li>
             </ol>
-            <h2>Contact us</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->

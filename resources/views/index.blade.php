@@ -235,6 +235,7 @@ $locale = session('locale');
                         <div class="member-info">
                             <h4>William Anderson</h4>
                             <span>Senior Psychologist</span>
+
                         </div>
                     </div>
                 </div>
@@ -253,6 +254,7 @@ $locale = session('locale');
                         <div class="member-info">
                             <h4>Amanda Jepson</h4>
                             <span>Funding Officer</span>
+
                         </div>
                     </div>
                 </div>
