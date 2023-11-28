@@ -148,9 +148,15 @@ class MenuTableSeeder extends Seeder
                 'parent_id' => 8,
             ],
             [
-                'title_en' => 'Game',
-                'title_tc' => '小遊戲',
-                'url' => 'leisure-zone/game',
+                'title_en' => 'Quiz Game',
+                'title_tc' => '問答遊戲',
+                'url' => 'leisure-zone/quiz-game',
+                'parent_id' => 8,
+            ],
+            [
+                'title_en' => 'Snake Game',
+                'title_tc' => '貪食蛇遊戲',
+                'url' => 'leisure-zone/snake-game',
                 'parent_id' => 8,
             ]
         ]);

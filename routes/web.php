@@ -103,11 +103,19 @@ Route::get('/leisure-zone', function () {
 Route::prefix('leisure-zone')->group(function () {
 
     Route::get('questionnaire', function () {
-        return view('questionnaire');
+        $input = "";
+        $final_mark="";
+    return view('questionnaire', ['input' => $input,'final_mark'=>$final_mark]);
+    });
+    
+    Route::post('questionnaire', 'App\Http\Controllers\FormController@handlePostForm');
+
+    Route::get('quiz-game', function () {
+        return view('quiz-game');
     });
 
-    Route::get('game', function () {
-        return view('game');
+    Route::get('snake-game', function () {
+        return view('snake-game');
     });
 });
 
