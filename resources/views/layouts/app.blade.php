@@ -35,7 +35,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="{{ url('/') }}">SEHS4517<span>.</span></a></h1>
+        <h1 class="logo me-auto"><a href="{{ url('/') }}">HKYSA<span>.</span></a></h1>
         <a href="{{ url('/') }}" class="logo me-auto"><img src="{{ config('app.url') }}img/logo.png" alt=""></a>
 
         <nav id="navbar" class="navbar order-last order-lg-0">
@@ -55,10 +55,43 @@
                         @endif
                     @endif
                 @endforeach
+                <!-- allow guest to register/login and allow authenticated user to access member account -->
+                @if($locale == 'en')
+                    <ul>
+                        @guest
+                            <li><a class="nav-link scrollto" href="/login">Login</a></li>
+                        @endguest
+                        @auth
+                            <li class="dropdown"><a class="nav-link scrollto" href="/member-profile">Account<i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a class="nav-link scrollto" href="/member-profile">Profile</a></li>
+                                    <li><a class="nav-link scrollto" href="/member-enrolled-activities">Enrolled Activities</a></li>
+                                    <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        @endauth
+                    </ul>
+                @else
+                    <ul>
+                        @guest
+                            <li><a class="nav-link scrollto" href="/login">登入</a></li>
+                        @endguest
+                        @auth
+                        <li class="dropdown"><a class="nav-link scrollto" href="/member-profile">帳號<i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a class="nav-link scrollto" href="/member-profile">個人資料</a></li>
+                                    <li><a class="nav-link scrollto" href="/member-enrolled-activities">已報名活動</a></li>
+                                    <li><a class="nav-link scrollto" href="/logout">登出</a></li>
+                                </ul>
+                            </li>
+                        @endauth
+                    </ul>
+                @endif
+                <!-- select display language -->
                 @if($locale == 'en')
                     <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'tc']) }}">中文</a></li>
                 @else
-                    <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'en']) }}">EN</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('change-language', ['locale' => 'en']) }}">English</a></li>
                 @endif
 
 
@@ -71,23 +104,6 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <nav id="navbar2" class="navbar order-last order-lg-0">
-            <ul>
-                @guest
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
-                @endguest
-                @auth
-                    <li class="dropdown"><span>Account</span>
-                        <ul>
-                            <li><a href="/member-profile">Profile</a></li>
-                            <li><a href="/member-enrolled-activities">Enrolled Activities</a></li>
-                            <li><a href="/logout">Logout</a></li>
-                        </ul>
-                    </li>
-                @endauth
-            </ul>
-        </nav>
     </div>
 </header><!-- End Header -->
 
@@ -99,16 +115,16 @@
 <footer id="footer">
     <div class="container d-md-flex py-4">
         <div class="me-md-auto text-center text-md-start">
-            <h3>SEHS4517<span>.</span></h3>
+            <h5>Hong Kong Youth Support Association<span>.</span></h5>
             <p>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Phone:</strong> +852 2345 6789<br>
                 <strong>Email:</strong> info@example.com<br>
             </p>
         </div>
         <div class="social-links text-center text-md-end pt-3 pt-md-0">
             <div class="copyright">
                 <br><br>
-                &copy; Copyright <strong><span>SEHS4517</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Hong Kong Youth Support Association</span></strong>. All Rights Reserved
             </div>
             <div class="credits"> Designed by SEHS4517 Group 1</div>
         </div>

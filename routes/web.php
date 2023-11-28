@@ -18,8 +18,8 @@ Route::get('/about-us', function () {
     return view('about-us');
 });
 
-Route::get('/news', function () {
-    return view('news');
+Route::get('gallery', function () {
+    return view('gallery');
 });
 
 Route::get('/new-activities', function () {
@@ -41,6 +41,7 @@ Route::prefix('new-activities')->group(function () {
 
     // add route for 'enrollment' page
     Route::get('/enrollment', 'App\Http\Controllers\ActivitiesController@showForm' );
+    
     // add route for 'enrollment' page after submitting request form
     Route::post('/enrollment-submit', [App\Http\Controllers\Enrolled_activitiesController::class, 'enrollment'])->name('enrollment-submit');
 });
@@ -100,9 +101,6 @@ Route::get('/leisure-zone', function () {
 });
 
 Route::prefix('leisure-zone')->group(function () {
-    Route::get('gallery', function () {
-        return view('gallery');
-    });
 
     Route::get('questionnaire', function () {
         return view('questionnaire');
@@ -146,12 +144,14 @@ Route::get('/member-profile', [App\Http\Controllers\MemberProfileController::cla
 Route::get('/member-enrolled-activities', [App\Http\Controllers\MemberEnrolledActivitiesController::class, 'show'])->name('member-enrolled-activities');
 
 // useless
+/*
 Route::get('/blog-single', function () {
     return view('blog-single');
 });
 Route::get('/portfolio-details', function () {
     return view('portfolio-details');
 });
+*/
 
 // Route::get('/admin/',[AdminController::class,'index'])->name("admins");
 

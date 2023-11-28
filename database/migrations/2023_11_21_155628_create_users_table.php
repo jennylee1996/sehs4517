@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->date('dob');
             $table->integer('phone');
+            $table->char('user_role');
             $table->string('email');
             $table->char('user_status');
             $table->timestamps();
