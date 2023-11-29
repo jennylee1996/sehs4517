@@ -157,6 +157,9 @@ Route::get('/admin-login', function () {
     return view('admins.login');
 })->name('admin-login');
 
+// add route for 'admin-login' page after submitting request form
+Route::post('/admin-login-submit', [App\Http\Controllers\Admin\AdminController::class, 'authenticate_admin'])->name('admin-login-submit');
+
 Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 
 Route::prefix('admin')->group(function () {
