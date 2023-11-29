@@ -18,7 +18,7 @@ class ActivitiesTableSeeder extends Seeder
             [
                 'id' => 1,
                 'type_id' => 1,
-                'acty_name' => 'Basketball 101',
+                'acty_name' => 'Basketball 100',
                 'acty_desc' => 'Basketball basic course for teenagers.',
                 'acty_start_date' => '2023-09-01',
                 'acty_end_date' => '2023-10-31',

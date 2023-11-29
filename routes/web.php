@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MembersController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/lang/{locale}', function ($locale) {
@@ -41,9 +42,9 @@ Route::prefix('new-activities')->group(function () {
 
     // add route for 'enrollment' page
     Route::get('/enrollment', 'App\Http\Controllers\ActivitiesController@showForm' );
-    
+
     // add route for 'enrollment' page after submitting request form
-    Route::post('/enrollment-submit', [App\Http\Controllers\Enrolled_activitiesController::class, 'enrollment'])->name('enrollment-submit');
+    Route::post('/enrollment-submit', [App\Http\Controllers\EnrolledActivitiesController::class, 'enrollment'])->name('enrollment-submit');
 });
 
 Route::get('/youth-services', function () {
@@ -107,7 +108,7 @@ Route::prefix('leisure-zone')->group(function () {
         $final_mark="";
     return view('questionnaire', ['input' => $input,'final_mark'=>$final_mark]);
     });
-    
+
     Route::post('questionnaire', 'App\Http\Controllers\FormController@handlePostForm');
 
     Route::get('quiz-game', function () {
@@ -151,24 +152,21 @@ Route::get('/member-profile', [App\Http\Controllers\MemberProfileController::cla
 // add route for 'member-enrolled-activities' page
 Route::get('/member-enrolled-activities', [App\Http\Controllers\MemberEnrolledActivitiesController::class, 'show'])->name('member-enrolled-activities');
 
-// useless
-/*
-Route::get('/blog-single', function () {
-    return view('blog-single');
+// Admin
+Route::get('/admin-login', function () {
+    return view('admins.login');
+})->name('admin-login');
+
+Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
+
+Route::prefix('admin')->group(function () {
+    Route::get('members', [MembersController::class, 'index']);
+    Route::get('members-downloadPDF', [MembersController::class, 'downloadPDF'])->name('admin.members-downloadPDF');
+    Route::get('activities', [\App\Http\Controllers\Admin\ActivitiesController::class, 'index']);
+    Route::get('activities-downloadPDF', [\App\Http\Controllers\Admin\ActivitiesController::class, 'downloadPDF'])->name('admin.activities-downloadPDF');
+    Route::get('enrolled-activities', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'index']);
+    Route::get('enrolled-activities-downloadPDF', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'downloadPDF'])->name('admin.enrolled-activities-downloadPDF');
 });
-Route::get('/portfolio-details', function () {
-    return view('portfolio-details');
-});
-*/
 
-// Route::get('/admin/',[AdminController::class,'index'])->name("admins");
 
-//Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-/*
-Route::get('/news', function () {
-    return view('news');
-});
-*/

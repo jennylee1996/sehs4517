@@ -1,182 +1,139 @@
-<!doctype html>
-
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin Laravel</title>
-    <link href="{{  config('app.url') }}assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-    <link href="{{  config('app.url') }}assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
-    <link href="{{  config('app.url') }}assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
-    <link href="{{  config('app.url') }}assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{  config('app.url') }}assets/css/master.css" rel="stylesheet">
-    {{-- <link href="{{  config('app.url') }}assets/vendor/chartsjs/Chart.min.css" rel="stylesheet"> --}}
-    <link href="{{  config('app.url') }}assets/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+    <title>Admin</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
+    <!-- Favicons -->
+    <link href="{{ config('app.url') }}img/favicon.png" rel="icon">
+    <link href="{{ config('app.url') }}img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    @livewireStyles
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ config('app.url') }}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ config('app.url') }}vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ config('app.url') }}vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ config('app.url') }}vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="{{ config('app.url') }}vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="{{ config('app.url') }}vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="{{ config('app.url') }}vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ config('app.url') }}css/admin.css" rel="stylesheet">
+
 </head>
 
-<body class="clinic_version">
+<body>
 
-    <div class="wrapper">
-        <nav id="sidebar" class="active mt-4">
-            <ul class="mt-5 list-unstyled components text-secondary">
-                {{-- @auth --}}
-                <li>
-                    {{-- <a href="{{ route('admins') }}"><i class="fas fa-home"></i> Dashboard</a> --}}
-                </li>
-                <li>
-                    <a href="{{ route('admin_docters') }}"><i class="fas fa-file-alt"></i>Docters</a>
-                </li>
-                <li>
-                    <a href="{{ route('admin_operations_report') }}"><i class="fas fa-file-alt"></i>Operation
-                        report</a>
-                </li>
-                <li>
-                    <a href="{{ route('admin_birth_report') }}"><i class="fas fa-file-alt"></i>Birth Report</a>
-                </li>
-                <li>
-                    <a href="{{ route('admin_patients') }}"><i class="fas fa-file-alt"></i>Patients</a>
-                </li>
-                <li>
-                    <a href="{{ route('nurses') }}"><i class="fas fa-file-alt"></i>Nurses</a>
-                </li>
-                <li>
-                    <a href="{{ route('employees') }}"><i class="fas fa-file-alt"></i>Employees</a>
-                </li>
-                <li>
-                    <a href="{{ route('departments') }}"><i class="fas fa-file-alt"></i>Department</a>
-                </li>
-                <li>
-                    <a href="{{ route('Rooms') }}"><i class="fas fa-file-alt"></i>Rooms</a>
-                </li>
-                <li>
-                    <a href="{{ route('patients_beds') }}"><i class="fas fa-file-alt"></i>Beds</a>
-                </li>
-                <li>
-                    <a href="{{ route('patient_bills') }}"><i class="fas fa-file-alt"></i>Bills</a>
-                </li>
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
 
-                <li>
-                    <a href="{{ route('medicinesStore') }}"><i class="fas fa-file-alt"></i>Medicines Store</a>
-                </li>
-                <li>
-                    <a href="{{ route('hods') }}"><i class="fas fa-file-alt"></i>HOD's</a>
-                </li>
-                <li>
-                    <a href="{{ route('blocks') }}"><i class="fas fa-file-alt"></i>Blocks</a>
-                </li>
-                <li>
-                    <a href="{{ route('requestedAppointment') }}"><i class="fas fa-file-alt"></i>Appointment
-                        Requests</a>
-                </li>
-                <li>
-                    <a href="{{ route('subscibers') }}"><i class="fas fa-file-alt"></i>Subscribers</a>
-                </li>
-                <li>
-                    <a href="{{ route('contactedus') }}"><i class="fas fa-file-alt"></i>Contacted Messages</a>
-                </li>
-                <li>
-                    <a href="#authmenu" data-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle no-caret-down"><i class="fas fa-user-shield"></i> Authentication</a>
-                    <ul class="collapse list-unstyled" id="authmenu">
-                        <li>
-                            <a href="login.html"><i class="fas fa-lock"></i> Login</a>
-                        </li>
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="{{ url('/admin') }}" class="logo d-flex align-items-center">
+            <img src="{{ config('app.url') }}img/logo.png" alt="">
+            <span class="d-none d-lg-block">HKYSA Admin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-                        <li>
-                            <a href="forgot-password.html"><i class="fas fa-user-lock"></i> Forgot password</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{ route('admin_settings') }}"><i class="fas fa-cog"></i>Settings</a>
-                </li>
-                {{-- @endauth --}}
-                {{-- @guest --}}
-                <li>
-                    <a href="signup.html"><i class="fas fa-user-plus"></i> Signup</a>
-                </li>
-                {{-- @endguest --}}
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+            <li class="nav-item dropdown pe-3">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">Admin </span>
+                </a><!-- End Profile Iamge Icon -->
 
-            </ul>
-        </nav>
-        <div id="body" class="active">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-white bg-white">
-                <button type="button" id="sidebarCollapse" class="btn btn-light"><i
-                        class="fas fa-bars"></i><span></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <div class="nav-dropdown">
-                                <a href="" class="nav-item nav-link dropdown-toggle text-secondary"
-                                    data-toggle="dropdown"><i class="fas fa-link"></i> <span>Quick Access</span> <i
-                                        style="font-size: .8em;" class="fas fa-caret-down"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right nav-link-menu">
-                                    <ul class="nav-list">
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-list"></i> Access Logs</a>
-                                        </li>
-                                        <div class="dropdown-divider"></div>
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-database"></i> Back
-                                                ups</a></li>
-                                        <div class="dropdown-divider"></div>
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-cloud-download-alt"></i>
-                                                Updates</a></li>
-                                        <div class="dropdown-divider"></div>
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-user-shield"></i>
-                                                Roles</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="nav-dropdown">
-                                <a href="" class="nav-item nav-link dropdown-toggle text-secondary"
-                                    data-toggle="dropdown"><i class="fas fa-user"></i>
-                                    <span>{{ auth()->user()->name ?? '' }}</span> <i style="font-size: .8em;"
-                                        class="fas fa-caret-down"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right nav-link-menu">
-                                    <ul class="nav-list">
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i>
-                                                Profile</a></li>
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i>
-                                                Messages</a></li>
-                                        <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a>
-                                        </li>
-                                        <div class="dropdown-divider"></div>
-                                        <li><a href="{{ route('login') }}" class="dropdown-item"><i
-                                                    class="fas fa-sign-out-alt"></i> Logout</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="content">
-                <div class="container">
-                    <br><br><br>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6>Admin </h6>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+        </ul>
+    </nav><!-- End Icons Navigation -->
+</header><!-- End Header -->
 
-                    {{ $slot }}
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+            <a class="nav-link " href="{{ url('/admin') }}">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
 
-                    @yield('admin_content')
-                    @livewireScripts
 
-                    <script src="{{  config('app.url') }}js/livewire-turbolinks.js"></script>
-                    <script src="{{  config('app.url') }}js/alpine.js"></script>
-                    <script src="{{  config('app.url') }}assets/vendor/jquery/jquery.min.js"></script>
-                    <script src="{{  config('app.url') }}assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    {{-- <script src="{{  config('app.url') }}assets/vendor/chartsjs/Chart.min.js"></script> --}}
-                    {{-- <script src="{{  config('app.url') }}assets/js/dashboard-charts.js"></script> --}}
-                    <script src="{{  config('app.url') }}assets/js/script.js"></script>
+        <li class="nav-heading">Admin</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ url('admin/members') }}">
+                <i class="bi bi-person"></i>
+                <span>Member</span>
+            </a>
+        </li><!-- End Profile Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ url('admin/activities') }}">
+                <i class="bi bi-layout-text-window-reverse"></i>
+                <span>Activities</span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ url('admin/enrolled-activities') }}">
+                <i class="bi bi-journal-text"></i>
+                <span>Enrolled Activity Histories</span>
+            </a>
+        </li><!-- End Contact Page Nav -->
+    </ul>
+
+</aside><!-- End Sidebar-->
+
+<main id="main" class="main">
+    @yield('content')
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="copyright">
+        Designed by SEHS4517 Group 1
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{{ config('app.url') }}vendor/apexcharts/apexcharts.min.js"></script>
+<script src="{{ config('app.url') }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ config('app.url') }}vendor/chart.js/chart.umd.js"></script>
+<script src="{{ config('app.url') }}vendor/quill/quill.min.js"></script>
+<script src="{{ config('app.url') }}vendor/simple-datatables/simple-datatables.js"></script>
+<script src="{{ config('app.url') }}vendor/tinymce/tinymce.min.js"></script>
+<script src="{{ config('app.url') }}vendor/php-email-form/validate.js"></script>
+<script src="{{ config('app.url') }}vendor/php-email-form/validate.js"></script>
+<!-- Template Main JS File -->
+<script src="{{ config('app.url') }}js/admin-main.js"></script>
+
 </body>
 
 </html>
+
+
