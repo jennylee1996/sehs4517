@@ -27,7 +27,7 @@ class MembersController extends Controller
         {
             $pdf = PDF::loadView('pdf.members', $data);
             $today = date('Y-m-d');
-            return $pdf->download('MemberList ' .$today . '.pdf');
+            return $pdf->download('Member List ' .$today . '.pdf');
         }
 
         return view('admins.members');

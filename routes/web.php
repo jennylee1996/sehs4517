@@ -157,15 +157,15 @@ Route::get('/admin-login', function () {
     return view('admins.login');
 })->name('admin-login');
 
-Route::get('/admin', function () {
-    return view('admins.index');
-})->name('admin');
+Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 
 Route::prefix('admin')->group(function () {
     Route::get('members', [MembersController::class, 'index']);
     Route::get('members-downloadPDF', [MembersController::class, 'downloadPDF'])->name('admin.members-downloadPDF');
     Route::get('activities', [\App\Http\Controllers\Admin\ActivitiesController::class, 'index']);
     Route::get('activities-downloadPDF', [\App\Http\Controllers\Admin\ActivitiesController::class, 'downloadPDF'])->name('admin.activities-downloadPDF');
+    Route::get('enrolled-activities', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'index']);
+    Route::get('enrolled-activities-downloadPDF', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'downloadPDF'])->name('admin.enrolled-activities-downloadPDF');
 });
 
 

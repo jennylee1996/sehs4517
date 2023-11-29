@@ -9,7 +9,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 class User extends Model implements Authenticatable
 {
     use HasFactory;
-    
+
     protected $table = 'users';
 
     protected $fillable = [
@@ -21,6 +21,11 @@ class User extends Model implements Authenticatable
         'email',
         'user_status'
     ];
+
+    public function enrolledActivities(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\EnrolledActivities', 'user_id', 'id');
+    }
 
     public function getAuthIdentifierName()
     {

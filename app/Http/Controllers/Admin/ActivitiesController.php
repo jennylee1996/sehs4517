@@ -31,7 +31,7 @@ class ActivitiesController extends Controller
         {
             $pdf = PDF::loadView('pdf.activities', $data);
             $today = date('Y-m-d');
-            return $pdf->download('ActivityList ' .$today . '.pdf');
+            return $pdf->download('Activity List ' .$today . '.pdf');
         }
 
         return view('admins.activities');

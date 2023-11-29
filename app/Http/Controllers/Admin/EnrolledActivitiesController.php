@@ -12,35 +12,25 @@ class EnrolledActivitiesController extends Controller
 {
     public function index()
     {
-        $activities = EnrolledActivities::all();
-        return view('admins.activities', compact('activities'));
-    }
-
-    public function activities()
-    {
-        return $this->hasMany('App\Models\Activities');
-    }
-
-    public function user()
-    {
-        return $this->hasMany('App\Models\User');
+        $enrolledActivities = EnrolledActivities::where('enroll_status', 1)->orderBy('enroll_date', 'asc')->get();
+        return view('admins.enrolled-activities', compact('enrolledActivities'));
     }
 
     public function downloadPDF(Request $request)
     {
-        $members = User::where('user_status', 1)->get();
+        $enrolledActivities = EnrolledActivities::where('enroll_status', 1)->orderBy('enroll_date', 'asc')->get();
 
         $data = [
-            'members' => $members,
+            'enrolledActivities' => $enrolledActivities,
         ];
 
         if($request->has('download'))
         {
-            $pdf = PDF::loadView('pdf.members', $data);
+            $pdf = PDF::loadView('pdf.enrolled-activities', $data);
             $today = date('Y-m-d');
-            return $pdf->download('MemberList ' .$today . '.pdf');
+            return $pdf->download('Enrolled Activities List ' .$today . '.pdf');
         }
 
-        return view('admins.members', compact('members'));
+        return view('admins.enrolled-activities');
     }
 }

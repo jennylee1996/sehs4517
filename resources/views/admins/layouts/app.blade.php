@@ -98,7 +98,7 @@
         </li><!-- End F.A.Q Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ url('admin/histories') }}">
+            <a class="nav-link collapsed" href="{{ url('admin/enrolled-activities') }}">
                 <i class="bi bi-journal-text"></i>
                 <span>Enrolled Activity Histories</span>
             </a>

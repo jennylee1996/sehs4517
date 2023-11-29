@@ -15,6 +15,14 @@ class EnrolledActivities extends Model
         'enroll_status',
 
     ];
+    public function activities(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo('App\Models\Activities', 'activity_id', 'id' );
+    }
+    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
 
 }
 
