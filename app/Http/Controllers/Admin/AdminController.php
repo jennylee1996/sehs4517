@@ -21,6 +21,8 @@ class AdminController extends Controller
 
     public function authenticate_admin(Request $request)
     {
+        $request->session()->regenerateToken(); // Regenerate CSRF token
+        
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
