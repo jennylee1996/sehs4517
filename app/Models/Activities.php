@@ -8,6 +8,16 @@ class Activities extends Model
 {
     protected $table = 'activities';
 
+    protected $fillable = [
+        'type_id',
+        'acty_name',
+        'acty_desc',
+        'acty_start_date',
+        'acty_end_date',
+        'capacity',
+        'acty_status'
+    ];
+
     public function activityTypes(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo('App\Models\ActivityTypes', 'type_id', 'id');

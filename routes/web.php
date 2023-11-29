@@ -162,7 +162,12 @@ Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index
 Route::prefix('admin')->group(function () {
     Route::get('members', [MembersController::class, 'index']);
     Route::get('members-downloadPDF', [MembersController::class, 'downloadPDF'])->name('admin.members-downloadPDF');
-    Route::get('activities', [\App\Http\Controllers\Admin\ActivitiesController::class, 'index']);
+    Route::get('activities', [\App\Http\Controllers\Admin\ActivitiesController::class, 'index'])->name('admin.activities');
+    Route::get('activities/create', [\App\Http\Controllers\Admin\ActivitiesController::class, 'create'])->name('admin.activities-create');
+    Route::put('activities/store', [\App\Http\Controllers\Admin\ActivitiesController::class, 'store'])->name('admin.activities-store');
+    Route::get('activities/{id}/edit', [\App\Http\Controllers\Admin\ActivitiesController::class, 'edit'])->name('admin.activities-edit');
+    Route::put('activities/{id}/update', [\App\Http\Controllers\Admin\ActivitiesController::class, 'update'])->name('admin.activities-update');
+    Route::get('activities/{id}/delete', [\App\Http\Controllers\Admin\ActivitiesController::class, 'delete'])->name('admin.activities-delete');
     Route::get('activities-downloadPDF', [\App\Http\Controllers\Admin\ActivitiesController::class, 'downloadPDF'])->name('admin.activities-downloadPDF');
     Route::get('enrolled-activities', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'index']);
     Route::get('enrolled-activities-downloadPDF', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'downloadPDF'])->name('admin.enrolled-activities-downloadPDF');
