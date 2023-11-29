@@ -47,7 +47,7 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-sport">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/bball.png" class="img-fluid portfolio-img" width= "400px" height= "400px" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/bball.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
                             <h4>Basketball class</h4>
                             <p>sport</p>
@@ -237,7 +237,7 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-sport">
                     <div class="portfolio-wrap">
-                        <img src="{{ config('app.url') }}img/portfolio/bball.png" class="img-fluid portfolio-img" width= "400px" height= "400px" alt="">
+                        <img src="{{ config('app.url') }}img/portfolio/bball.png" class="img-fluid portfolio-img" alt="">
                         <div class="portfolio-info">
                             <h4>籃球班</h4>
                             <p>運動</p>
