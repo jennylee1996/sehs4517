@@ -13,8 +13,12 @@ class AdminController extends Controller
 {
     public function index()
     {
+        $today = date('Y-m-d');
         $members = User::where('user_status', 1)->count();
-        $activities = Activities::where('acty_status', 1)->count();
+        $activities = Activities::where('acty_status', 1)
+            ->where('acty_start_date', '<=', $today)
+            ->where('acty_end_date', '>=', $today)
+            ->count();
         $enrolledMembers  = EnrolledActivities::where('enroll_status', 1)->count();
         return view('admins.index', compact('members', 'activities', 'enrolledMembers'));
     }
