@@ -21,9 +21,12 @@ class LoginControllerR1 extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+            //$request->session()->regenerate();
 
-            return redirect('/');
+            if (Auth::user()->user_role == 0)
+            {
+                return redirect('/');
+            }
         }
 
         return back()->with(['error' => 'Login Gagal']);

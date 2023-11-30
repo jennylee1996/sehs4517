@@ -41,10 +41,8 @@ class AdminController extends Controller
 
         if (Auth::attempt($credentials)) {
 
-            $user = Auth::user();
-            
-            if ($user->user_role == 1)
-            {
+            if (Auth::user()->user_role == 1) {
+
                 return redirect()->intended('admin');
             }
         }
@@ -56,11 +54,6 @@ class AdminController extends Controller
     {
         {
             Auth::logout();
-
-            if (Auth::check())
-            {
-                session()->forget(Auth::user()->id);
-            }
     
             return redirect('admin-login');
         }
