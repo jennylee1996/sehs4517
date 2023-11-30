@@ -13,14 +13,19 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $today = date('Y-m-d');
-        $members = User::where('user_status', 1)->count();
-        $activities = Activities::where('acty_status', 1)
-            ->where('acty_start_date', '<=', $today)
-            ->where('acty_end_date', '>=', $today)
-            ->count();
-        $enrolledMembers  = EnrolledActivities::where('enroll_status', 1)->count();
-        return view('admins.index', compact('members', 'activities', 'enrolledMembers'));
+        if (Auth::check())
+        {
+            $today = date('Y-m-d');
+            $members = User::where('user_status', 1)->count();
+            $activities = Activities::where('acty_status', 1)
+                ->where('acty_start_date', '<=', $today)
+                ->where('acty_end_date', '>=', $today)
+                ->count();
+            $enrolledMembers  = EnrolledActivities::where('enroll_status', 1)->count();
+            return view('admins.index', compact('members', 'activities', 'enrolledMembers'));
+        }
+
+        return redirect('admin-login')->with('error', 'Invalid Message');
     }
 
     public function authenticate_admin(Request $request)
@@ -33,9 +38,22 @@ class AdminController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('admin/');
+
+            if (Auth::user()->user_role == 1) {
+
+                return redirect()->intended('admin');
+            }
         }
 
-        return redirect('login')->with('error', 'Invalid Message');
+        return redirect('admin-login')->with('error', 'Invalid Message');
+    }
+
+    public function logout()
+    {
+        {
+            Auth::logout();
+    
+            return redirect('admin-login');
+        }
     }
 }

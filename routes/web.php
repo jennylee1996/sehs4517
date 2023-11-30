@@ -157,6 +157,12 @@ Route::get('/admin-login', function () {
     return view('admins.login');
 })->name('admin-login');
 
+// add route for 'admin-login' page after submitting request form
+Route::post('/admin-login-submit', [App\Http\Controllers\Admin\AdminController::class, 'authenticate_admin'])->name('admin-login-submit');
+
+// add route for 'admin-logout' page
+Route::get('/admin-logout', [App\Http\Controllers\Admin\AdminController::class, 'logout'])->name('admin-logout');
+
 Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 
 Route::prefix('admin')->group(function () {
@@ -172,6 +178,5 @@ Route::prefix('admin')->group(function () {
     Route::get('enrolled-activities', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'index']);
     Route::get('enrolled-activities-downloadPDF', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'downloadPDF'])->name('admin.enrolled-activities-downloadPDF');
 });
-
 
 
