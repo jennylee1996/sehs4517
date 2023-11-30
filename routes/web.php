@@ -179,6 +179,4 @@ Route::prefix('admin')->group(function () {
     Route::get('enrolled-activities-downloadPDF', [\App\Http\Controllers\Admin\EnrolledActivitiesController::class, 'downloadPDF'])->name('admin.enrolled-activities-downloadPDF');
 });
 
-// add route for 'admin-logout' page
-Route::get('/admin-logout', [App\Http\Controllers\Admin\AdminController::class, 'logout'])->name('admin-logout');
 

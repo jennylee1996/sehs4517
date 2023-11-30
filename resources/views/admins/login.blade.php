@@ -16,6 +16,7 @@
                                     <p class="text-center small">Enter your email & password to login</p>
                                 </div>
 
+                                <!-- login form -->
                                 <form method="post" class="row g-3 needs-validation" action="{{ route('admin-login-submit') }}">
                                 @csrf
 

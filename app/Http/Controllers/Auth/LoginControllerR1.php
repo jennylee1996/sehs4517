@@ -21,7 +21,6 @@ class LoginControllerR1 extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            //$request->session()->regenerate();
 
             if (Auth::user()->user_role == 0)
             {
