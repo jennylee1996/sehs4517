@@ -129,6 +129,7 @@
 <script src="{{ config('app.url') }}vendor/tinymce/tinymce.min.js"></script>
 <script src="{{ config('app.url') }}vendor/php-email-form/validate.js"></script>
 <script src="{{ config('app.url') }}vendor/php-email-form/validate.js"></script>
+<script src="{{ config('app.url') }}vendor/sweer"></script>
 <!-- Template Main JS File -->
 <script src="{{ config('app.url') }}js/admin-main.js"></script>
 

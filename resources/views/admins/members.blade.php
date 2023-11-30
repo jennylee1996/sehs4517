@@ -18,10 +18,10 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">All Members</h5>
-                    <p></p>
                     <div class="pull-right">
                         <a class="btn btn-primary" href="{{route('admin.members-downloadPDF',['download'=>'pdf'])}}">Download PDF</a>
                     </div>
+                    <h6 class="card-title"></h6>
 
                     <!-- Table with stripped rows -->
                     <table class="table datatable">
