@@ -16,7 +16,6 @@ class EnrolledActivitiesController extends Controller
     $activity_end_date = $activity->acty_end_date;
 
       $validatedData = $request->validate([
-          //'user_id' => 'required|numeric|max:255',
           'activity_id' => 'required|numeric|max:255',
           'enroll_status' => 'required|numeric',
           'enroll_date' => [

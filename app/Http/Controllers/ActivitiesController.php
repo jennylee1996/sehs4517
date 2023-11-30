@@ -12,7 +12,7 @@ class ActivitiesController extends Controller
   // retrieves the activities from the database and passes them to the enrollment view
   public function showForm()
   {
-      $activities = DB::table('activities')->get()->toArray();
+    $activities = Activities::where('acty_status', 1)->get();
       return view('enrollment', compact('activities'));
   }
     
