@@ -61,12 +61,14 @@
         <!--  End retrieving table  -->
 
         <!-- Erollment Form -->
+        @auth
         <div class="container">
           <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">                              
                         <div class="card-header">Activities Erollment Form</div>
                             <div class="card-body">
+                            
                                 <form method="POST" action="{{ route('enrollment-submit') }}"> 
 
                                     <!-- protect against cross-site request forgery attacks -->
@@ -108,12 +110,14 @@
                                             </button>
                                         </div>
                                     </div>                                          
-                                </form>                                       
+                                </form>  
+                                                               
                             </div>                       
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div> 
+            @endauth   
         <!-- End activities-enrollment form -->  
 
         <!-- Error message --> 
@@ -188,6 +192,7 @@
         <!--  End retrieving table  -->
 
         <!-- Erollment Form -->
+        @auth
         <div class="container">
           <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -241,6 +246,7 @@
                     </div>
                 </div>
             </div>  
+            @endauth   
         <!-- End activities-enrollment form -->  
 
         <!-- Error message --> 
